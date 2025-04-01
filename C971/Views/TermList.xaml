@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.Views.TermList"
+             Title="TermList">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="-55">
+                <Label
+            Text="Welcome to Term List!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+                <!--<Button Text="Term 1" Margin="85" ></Button>
+        <DatePicker Margin="20"></DatePicker>
+        <DatePicker Margin="20"></DatePicker>
+        
+        <Button Text="Term 2" Margin="85"></Button>
+        <DatePicker Margin="20"></DatePicker>
+        <DatePicker Margin="20"></DatePicker>
+        <ScrollView>
+            <StackLayout x:Name="TermsStackLayout">
+                 
+            </StackLayout>
+        </ScrollView>-->
+
+                <Grid Padding="10" RowSpacing="5" ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ScrollView Grid.Row="0">
+                        <!-- CollectionView to display terms dynamically -->
+                        <CollectionView x:Name="TermsCollectionView" ItemsSource="{Binding Terms}" SelectionMode="None" Grid.Row="0">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame BorderColor="Black" Padding="10" Margin="5" CornerRadius="10">
+                                        <Grid Padding="10" RowSpacing="5" ColumnSpacing="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <!-- Button for TermName, that will navigate to Term Datail Page -->
+                                            <Button Text="{Binding TermName}" Clicked="OnTermButtonClicked" Grid.Row="0" Grid.Column="0"></Button>
+                                            <!-- Button to edit the term -->
+                                            <Button Text="Edit" Clicked="OnEditTermClicked" CommandParameter="{Binding TermId}" BorderColor="Black" HeightRequest="40" WidthRequest="70" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="3" Grid.Column="1"></Button>
+                                            <!-- Button to delete the term -->
+                                            <Button Text="Delete" Clicked="OnDeleteTermClicked" CommandParameter="{Binding TermId}" BorderColor="Black" HeightRequest="40" WidthRequest="70" HorizontalOptions="End" VerticalOptions="Center" Grid.Row="4" Grid.Column="1"></Button>
+                                            <Label Text="{Binding StartDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="12" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="1" Grid.Column="0" />
+                                            <Label Text="{Binding EndDate, StringFormat='{0:MM/dd/yyyy}'}" FontSize="12" HorizontalOptions="Start" VerticalOptions="Center" Grid.Row="2" Grid.Column="0" />
+
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+
+                        </CollectionView>
+
+                    </ScrollView>
+                    <Button Text="Add Term"  Clicked="OnAddTermClicked" HeightRequest="40" HorizontalOptions="Fill" VerticalOptions="End" Grid.Row="2"></Button>
+
+
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
