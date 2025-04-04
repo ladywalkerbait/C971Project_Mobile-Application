@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace C971.Services
 {
-    internal class Settings
+    public static class Settings
     {
+        public static bool FirstRun
+        {
+            get => Preferences.Get(nameof(FirstRun), true);
+            set => Preferences.Set(nameof(FirstRun), value);
+        }
+        public static void ClearSettings()
+        {
+            Preferences.Clear();
+        }
     }
 }

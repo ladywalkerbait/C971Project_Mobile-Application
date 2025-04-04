@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.Views.TermDetailedView"
+             Title="TermDetailedView">
+    <!--<VerticalStackLayout>
+        <Label 
+            Text="{Binding TermName}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <ScrollView>
+
+            <StackLayout Padding="10">
+
+                <Grid RowSpacing="10" ColumnSpacing="10" HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" /> --><!-- classes list scrollable --><!--
+                        <RowDefinition Height="Auto" />
+ 
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="TermNameLabel" FontSize="20" HorizontalOptions="Center" Text="{Binding TermName}" Grid.Row="0"></Label>
+                    <Label Text="Classes for this Term" FontSize="18" HorizontalOptions="Center" Grid.Row="1"></Label>
+
+                    --><!--<Label x:Name="StartDateLabel" FontSize="16" Text="{Binding StartDate, StringFormat='{0:MM/dd/yyyy}'}"></Label>
+
+                    <Label x:Name="EndDateLabel" FontSize="16" Text="{Binding EndDate, StringFormat='{0:MM/dd/yyyy}'}"></Label>--><!--
+
+                    <CollectionView x:Name="ClassesCollectionView" ItemsSource="{Binding _class}" Grid.Row="2" SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BorderColor="Black" Padding="10" Margin="5">
+                                    <StackLayout x:Name="CoursesButtonLayout">
+                                        <Grid> --><!-- added the grid and below grid definitions 4/3 --><!--
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Button Text="{Binding ClassName}" FontSize="18" HorizontalOptions="Fill" Clicked="OnCourseButtonClicked" CommandParameter="{Binding ClassId}" Grid.Row="0"></Button>
+                                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                                <Label Text="Start: " VerticalOptions="Center" FontSize="14"></Label>
+                                                <Label Text="{Binding StartDate, StringFormat='{0:MM/dd/yyyy}'}" ></Label>
+
+                                                <Label Text="End: " VerticalOptions="Center" FontSize="14"></Label>
+                                                <Label Text="{Binding EndDate, StringFormat='{0:MM/dd/yyyy}'}"></Label>
+                                            </StackLayout>
+                                            --><!-- Delete Class Button --><!--
+                                            <Button Text="Delete" CommandParameter="{Binding ClassId}" Clicked="OnDeleteCourseClicked"></Button>
+                                        </Grid>
+                                    </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    --><!-- Add Class Button --><!--
+                    <Button Text="Add Course" Grid.Row="3" Clicked="OnAddCourseClicked"></Button>
+                    
+                </Grid>
+                
+                <Label x:Name="NoCoursesLabel" Text="No courses have been added yet. Add a course to this term." IsVisible="False" HorizontalOptions="Center"></Label>
+            
+            </StackLayout>
+            
+        </ScrollView>
+    </VerticalStackLayout>-->
+</ContentPage>
