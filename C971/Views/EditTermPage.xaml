@@ -40,8 +40,11 @@
                 </Grid>
                 <!-- Button to add a new class -->
                 <Button x:Name="AddClass" Clicked="AddClass_OnClicked" Text="Add Course"></Button>
-                <!--<Label FontSize="Large" Text="Term Count"></Label>-->
-                <Label x:Name="ClassList" FontAttributes="Bold" FontSize="Large" Text="List of Classes"></Label>
+                
+                <Label FontSize="Large" Text="Class Count"></Label>
+                <Label x:Name="CountLabel" FontSize="Large" Text="0"></Label>
+                
+                <Label x:Name="ClassList" FontAttributes="Bold" FontSize="Large" Text="List of Classes:"></Label>
                 <!-- Display Classes in a list -->
                 <CollectionView x:Name="ClassesCollectionView" EmptyView="No courses to display." 
                                 SelectionChanged="ClassesCollectionView_OnSelectionChanged"
@@ -54,7 +57,7 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
-                                <Grid Padding="5" BackgroundColor="White" ColumnSpacing="22" RowSpacing="1">
+                                <Grid Padding="5" BackgroundColor="LightGray" ColumnSpacing="22" RowSpacing="1">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.Views.EditClassPage"
+             Title="EditClassPage">
+    <!--<VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SaveClass" Text="Save" Clicked="SaveClass_OnClicked"></ToolbarItem>
+        <ToolbarItem x:Name="CancelClass" Text="Cancel" Clicked="CancelClass_OnClicked"></ToolbarItem>
+        <ToolbarItem x:Name="DeleteClass" Text="Delete" Clicked="DeleteClass_OnClicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+
+            <Grid Padding="5" BackgroundColor="LightGray"  ColumnSpacing="22" RowSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">ClassId</Label>
+                <Entry x:Name="ClassId" Grid.Row="0" Grid.Column="1" IsReadOnly="True" Placeholder="Enter Class Name" 
+                       Text="{Binding ClassId}" VerticalTextAlignment="Center"></Entry>
+                <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Class Name</Label>
+                <Entry x:Name="ClassName" Grid.Row="1" Grid.Column="1" Placeholder="Enter Class Name" Text="{Binding ClassName}"
+                       VerticalTextAlignment="Center"></Entry>
+                <Label Grid.Row="2" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Start Date</Label>
+                <DatePicker x:Name="StartDatePicker" Grid.Row="2" Grid.Column="1" ></DatePicker>
+                <Label Grid.Row="3" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">End Date</Label>
+                <DatePicker x:Name="EndDatePicker" Grid.Row="3" Grid.Column="1" ></DatePicker>
+                <Label Grid.Row="4" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Course Status</Label>
+                <Picker x:Name="CourseStatus" Title="Select Course Status" Grid.Row="4" Grid.Column="1" FontSize="Medium">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>In-Progress</x:String>
+                            <x:String>Completed</x:String>
+                            <x:String>Dropped</x:String>
+                            <x:String>Plan to Take</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Label Grid.Row="5" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Instructor Name</Label>
+                <Entry x:Name="InstructorName" Grid.Row="5" Grid.Column="1" Placeholder="Enter Instructor Name" Text="{Binding InstructorName}"
+                       VerticalTextAlignment="Center"></Entry>
+                <Label Grid.Row="6" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Instructor Phone</Label>
+                <Entry x:Name="InstructorPhone" Grid.Row="6" Grid.Column="1" Placeholder="Enter Phone Number" Text="{Binding InstructorPhone}"
+                       VerticalTextAlignment="Center"></Entry>
+                <Label Grid.Row="7" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Instructor Email</Label>
+                <Entry x:Name="InstructorEmail" Grid.Row="7" Grid.Column="1" Placeholder="Enter Email" Text="{Binding InstructorEmail}"
+                       VerticalTextAlignment="Center"></Entry>
+                <Label Grid.Row="8" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Notes</Label>
+                <Editor x:Name="NotesEditor" Grid.Row="8" Grid.Column="1" Placeholder="Enter Notes Here" Text="{Binding Notes}"
+                        VerticalTextAlignment="Center"></Editor>
+            </Grid>
+            
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

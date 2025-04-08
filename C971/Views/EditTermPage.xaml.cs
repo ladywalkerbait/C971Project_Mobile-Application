@@ -1,5 +1,9 @@
 using C971.Models;
 using C971.Services;
+using C971;
+using System;
+using SQLite;
+using Microsoft.Maui.Controls;
 using System.Threading.Tasks;
 using Plugin.LocalNotification;
 
@@ -20,6 +24,7 @@ public partial class EditTermPage : ContentPage
 		TermName.Text = term.TermName;
 		StartDatePicker.Date = term.StartDate;
 		EndDatePicker.Date = term.EndDate;
+		
 	}
     //private async void OnEditSaveClicked(object sender, EventArgs e)
     //{
@@ -37,6 +42,9 @@ public partial class EditTermPage : ContentPage
     protected override async void OnAppearing()
 	{
 		base.OnAppearing();
+
+		int countClasses = await DatabaseService.GetClassesCountAsync(_selectedTermId);
+		CountLabel.Text = countClasses.ToString();
 
 		ClassesCollectionView.ItemsSource = await DatabaseService.GetClass(_selectedTermId);
 	}
@@ -74,15 +82,25 @@ public partial class EditTermPage : ContentPage
 	}
 	async void ClassesCollectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
-		var classes = (Classes)e.CurrentSelection.FirstOrDefault();
+		var selectedClass = (Classes)e.CurrentSelection.FirstOrDefault();
 		if (e.CurrentSelection != null)
 		{
-			//await Navigation.PushAsync((new ClassEdit(classes)));
+			await Navigation.PushAsync((new EditClassPage(selectedClass)));
 		}
 	}
 	async void AddClass_OnClicked(object sender, EventArgs e)
 	{
 		var termId = Int32.Parse(TermId.Text);
-		//await Navigation.PushAsync(new AddClassPage(termId));
+
+        //var classCount = await _db.Table<Classes>().Where(i => i.TermId == termId).CountAsync();
+        int countClasses = await DatabaseService.GetClassesCountAsync(_selectedTermId);
+        if (countClasses >= 6)
+		{
+			await DisplayAlert("Limit Reached", "You cannot add more than 6 classes to this Term.", "OK");
+			return;
+		}
+
+
+		await Navigation.PushAsync(new AddClassPage(termId));
 	}
 }

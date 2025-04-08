@@ -124,6 +124,7 @@ namespace C971.Services
             if (existingClassesCount >= 6)
             {
                 throw new InvalidOperationException("You cannot add more than 6 classes for this Term.");
+                
             }
 
             var classes = new Classes()
@@ -335,6 +336,14 @@ namespace C971.Services
         public static async void LoadSampleDataSql()
         {
 
+        }
+        #endregion
+
+        #region Counts
+        public static async Task<int> GetClassesCountAsync(int _selectedTermId)
+        {
+            int classCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Classes where TermId = ?", _selectedTermId);
+            return classCount;
         }
         #endregion
     }
