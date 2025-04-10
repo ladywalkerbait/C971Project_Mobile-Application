@@ -173,7 +173,7 @@ public partial class EditClassPage : ContentPage
         var selectedAssessment = (Assessments)e.CurrentSelection.FirstOrDefault();
         if (e.CurrentSelection != null)
         {
-            //await Navigation.PushAsync((new EditAssessmentsPage(selectedAssessment)));
+            await Navigation.PushAsync((new EditAssessmentPage(selectedAssessment)));
         }
     }
     async void AddAssessment_OnClicked(object sender, EventArgs e)

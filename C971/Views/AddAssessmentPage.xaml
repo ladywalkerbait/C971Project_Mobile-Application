@@ -43,7 +43,7 @@
                  FontSize="Medium" ></DatePicker>
                 <Label Grid.Row="3" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Assessment Type</Label>
                 <Picker x:Name="AssessmentTypePicker" Title="Select Assessment Type" Grid.Row="3" Grid.Column="1"
-            FontSize="Medium">
+                 FontSize="Medium">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>Performance Assessment</x:String>
@@ -51,6 +51,8 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
+                <Label Grid.Row="4" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Notifications</Label>
+                <Switch x:Name="Notification" Grid.Row="4" Grid.Column="1" HorizontalOptions="End" IsToggled="True" VerticalOptions="Center"></Switch>
 
             </Grid>
         </StackLayout>

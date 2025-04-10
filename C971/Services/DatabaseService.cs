@@ -269,7 +269,8 @@ namespace C971.Services
             var assessments = await _db.Table<Models.Assessments>().ToListAsync();
             return assessments;
         }
-        public static async Task UpdateAssessment(int assessmentId, string assessmentName)
+        public static async Task UpdateAssessment(int assessmentId, string assessmentName, DateTime startDate, DateTime endDate,
+            string assessmentType)
         {
             await GetDatabase();
 
@@ -278,6 +279,9 @@ namespace C971.Services
             if (assessmentQuery != null)
             {
                 assessmentQuery.AssessmentName = assessmentName;
+                assessmentQuery.StartDate = startDate;
+                assessmentQuery.EndDate = endDate;
+                assessmentQuery.AssessmentType = assessmentType;
             }
         }
         #endregion

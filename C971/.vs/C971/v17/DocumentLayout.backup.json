@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\C971\\C971\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\editclasspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\editclasspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\editassessmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\editassessmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\termlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\termlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\editclasspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\editclasspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\editassessmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\editassessmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\models\\assessments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:models\\assessments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\editclasspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\editclasspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\addassessmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\addassessmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\addclasspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\addclasspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\addassessmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\addassessmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,24 +47,8 @@
       "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\edittermpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\addclasspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\addclasspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\addclasspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\addclasspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\addassessmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\addassessmentpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\edittermpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\edittermpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\addassessmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|solutionrelative:views\\addassessmentpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{901C9B0D-57F7-4666-B554-54CB06BC657B}|C971.csproj|c:\\c971\\c971\\views\\addtermpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,24 +62,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TermList.xaml.cs",
+              "DocumentMoniker": "C:\\C971\\C971\\Views\\TermList.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\TermList.xaml.cs",
+              "ToolTip": "C:\\C971\\C971\\Views\\TermList.xaml.cs",
+              "RelativeToolTip": "Views\\TermList.xaml.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAADwv2YAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:08:21.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Assessments.cs",
+              "DocumentMoniker": "C:\\C971\\C971\\Models\\Assessments.cs",
+              "RelativeDocumentMoniker": "Models\\Assessments.cs",
+              "ToolTip": "C:\\C971\\C971\\Models\\Assessments.cs",
+              "RelativeToolTip": "Models\\Assessments.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T16:04:30.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EditAssessmentPage.xaml.cs",
+              "DocumentMoniker": "C:\\C971\\C971\\Views\\EditAssessmentPage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\EditAssessmentPage.xaml.cs",
+              "ToolTip": "C:\\C971\\C971\\Views\\EditAssessmentPage.xaml.cs",
+              "RelativeToolTip": "Views\\EditAssessmentPage.xaml.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAArwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T15:12:33.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "EditAssessmentPage.xaml",
+              "DocumentMoniker": "C:\\C971\\C971\\Views\\EditAssessmentPage.xaml",
+              "RelativeDocumentMoniker": "Views\\EditAssessmentPage.xaml",
+              "ToolTip": "C:\\C971\\C971\\Views\\EditAssessmentPage.xaml",
+              "RelativeToolTip": "Views\\EditAssessmentPage.xaml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAmwBwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-10T15:10:43.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "EditTermPage.xaml.cs",
               "DocumentMoniker": "C:\\C971\\C971\\Views\\EditTermPage.xaml.cs",
               "RelativeDocumentMoniker": "Views\\EditTermPage.xaml.cs",
               "ToolTip": "C:\\C971\\C971\\Views\\EditTermPage.xaml.cs",
               "RelativeToolTip": "Views\\EditTermPage.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwCoAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T12:30:43.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "EditTermPage.xaml",
               "DocumentMoniker": "C:\\C971\\C971\\Views\\EditTermPage.xaml",
               "RelativeDocumentMoniker": "Views\\EditTermPage.xaml",
@@ -80,33 +144,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EditClassPage.xaml",
               "DocumentMoniker": "C:\\C971\\C971\\Views\\EditClassPage.xaml",
               "RelativeDocumentMoniker": "Views\\EditClassPage.xaml",
               "ToolTip": "C:\\C971\\C971\\Views\\EditClassPage.xaml",
               "RelativeToolTip": "Views\\EditClassPage.xaml",
-              "ViewState": "AgIAADwAAAAAAAAAAAAmwE0AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAE8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-10T12:29:44.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "AddClassPage.xaml",
               "DocumentMoniker": "C:\\C971\\C971\\Views\\AddClassPage.xaml",
               "RelativeDocumentMoniker": "Views\\AddClassPage.xaml",
               "ToolTip": "C:\\C971\\C971\\Views\\AddClassPage.xaml",
               "RelativeToolTip": "Views\\AddClassPage.xaml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADkAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAADkAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-10T12:24:02.096Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "AddTermPage.xaml.cs",
               "DocumentMoniker": "C:\\C971\\C971\\Views\\AddTermPage.xaml.cs",
               "RelativeDocumentMoniker": "Views\\AddTermPage.xaml.cs",
@@ -119,26 +183,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "EditClassPage.xaml.cs",
               "DocumentMoniker": "C:\\C971\\C971\\Views\\EditClassPage.xaml.cs",
               "RelativeDocumentMoniker": "Views\\EditClassPage.xaml.cs",
               "ToolTip": "C:\\C971\\C971\\Views\\EditClassPage.xaml.cs",
               "RelativeToolTip": "Views\\EditClassPage.xaml.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAqwHYAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T20:43:33.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "DatabaseService.cs",
               "DocumentMoniker": "C:\\C971\\C971\\Services\\DatabaseService.cs",
               "RelativeDocumentMoniker": "Services\\DatabaseService.cs",
               "ToolTip": "C:\\C971\\C971\\Services\\DatabaseService.cs",
               "RelativeToolTip": "Services\\DatabaseService.cs",
-              "ViewState": "AgIAAFEBAAAAAAAAAAAawPoAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAYBAAAAAAAAAAAvwBsBAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T20:33:06.866Z",
               "EditorCaption": ""
@@ -151,7 +215,7 @@
               "RelativeDocumentMoniker": "Views\\AddAssessmentPage.xaml.cs",
               "ToolTip": "C:\\C971\\C971\\Views\\AddAssessmentPage.xaml.cs",
               "RelativeToolTip": "Views\\AddAssessmentPage.xaml.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAwwBYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswBkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T20:03:06.685Z",
               "EditorCaption": ""
@@ -164,22 +228,9 @@
               "RelativeDocumentMoniker": "Views\\AddAssessmentPage.xaml",
               "ToolTip": "C:\\C971\\C971\\Views\\AddAssessmentPage.xaml",
               "RelativeToolTip": "Views\\AddAssessmentPage.xaml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADUAAAB6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-09T19:50:20.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddClassPage.xaml.cs",
-              "DocumentMoniker": "C:\\C971\\C971\\Views\\AddClassPage.xaml.cs",
-              "RelativeDocumentMoniker": "Views\\AddClassPage.xaml.cs",
-              "ToolTip": "C:\\C971\\C971\\Views\\AddClassPage.xaml.cs",
-              "RelativeToolTip": "Views\\AddClassPage.xaml.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T20:20:04.564Z",
               "EditorCaption": ""
             }
           ]

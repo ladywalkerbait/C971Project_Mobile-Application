@@ -58,6 +58,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = C971.Views.AddTermPage.xam
 build_metadata.AdditionalFiles.TargetPath = Views\AddTermPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AddTermPage.xaml
 
+[C:/C971/C971/Views/EditAssessmentPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = C971.Views.EditAssessmentPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\EditAssessmentPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\EditAssessmentPage.xaml
+
 [C:/C971/C971/Views/EditClassPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = C971.Views.EditClassPage.xaml
