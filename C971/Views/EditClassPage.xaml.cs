@@ -8,9 +8,12 @@ namespace C971.Views;
 
 public partial class EditClassPage : ContentPage
 {
+    private readonly int _selectedClassId;
 	public EditClassPage(Classes selectedClass)
 	{
 		InitializeComponent();
+
+        _selectedClassId = selectedClass.ClassId;
 
         ClassId.Text = selectedClass.ClassId.ToString();
         ClassName.Text = selectedClass.ClassName;
@@ -23,7 +26,17 @@ public partial class EditClassPage : ContentPage
         NotesEditor.Text = selectedClass.Notes;
 
 	}
-	async void SaveClass_OnClicked(object sender, EventArgs e)
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+
+        int countAssessments = await DatabaseService.GetAssessmentsCountAsync(_selectedClassId);
+        CountLabel.Text = countAssessments.ToString();
+
+        AssessmentsCollectionView.ItemsSource = await DatabaseService.GetAssessment(_selectedClassId);
+    }
+
+    async void SaveClass_OnClicked(object sender, EventArgs e)
     {
         DateTime startDate = StartDatePicker.Date;
         DateTime endDate = EndDatePicker.Date;
@@ -76,7 +89,7 @@ public partial class EditClassPage : ContentPage
 
         await DatabaseService.UpdateClass(Int32.Parse(ClassId.Text), ClassName.Text, StartDatePicker.Date, EndDatePicker.Date,
             CourseStatus.SelectedItem.ToString(), InstructorName.Text, InstructorPhone.Text, InstructorEmail.Text,
-            NotesEditor.Text);
+            NotesEditor.Text, Notification.IsToggled);
         await Navigation.PopAsync();
     }
     async void CancelClass_OnClicked(object sender, EventArgs e)
@@ -98,6 +111,24 @@ public partial class EditClassPage : ContentPage
         }
         await Navigation.PopAsync();
     }
+
+    async void ShareButton_OnClicked(object sender, EventArgs e)
+    {
+        var text = NotesEditor.Text;
+
+        if (string.IsNullOrEmpty(text))
+        {
+            await DisplayAlert("Error", "There are not notes to share.", "OK");
+            return;
+        }
+
+        await Share.RequestAsync(new ShareTextRequest
+        {
+            Text = text,
+            Title = "Share Notes"
+        });
+    }
+
     //Extra validation methods for Name, Phone, and Email
     public static bool IsValidName(string InstructorName)
     {
@@ -135,5 +166,28 @@ public partial class EditClassPage : ContentPage
         string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
         return Regex.IsMatch(InstructorEmail, pattern);
         //return false;
+    }
+
+    async void AssessmentsCollectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var selectedAssessment = (Assessments)e.CurrentSelection.FirstOrDefault();
+        if (e.CurrentSelection != null)
+        {
+            //await Navigation.PushAsync((new EditAssessmentsPage(selectedAssessment)));
+        }
+    }
+    async void AddAssessment_OnClicked(object sender, EventArgs e)
+    {
+        var classId = Int32.Parse(ClassId.Text);
+
+        //var classCount = await _db.Table<Classes>().Where(i => i.TermId == termId).CountAsync();
+        int countAssessments = await DatabaseService.GetAssessmentsCountAsync(_selectedClassId);
+        if (countAssessments >= 2)
+        {
+            await DisplayAlert("Limit Reached", "You cannot add more than 2 assessments to this course.", "OK");
+            return;
+        }
+   
+        await Navigation.PushAsync(new AddAssessmentPage(classId));
     }
 }

@@ -115,7 +115,7 @@ namespace C971.Services
         //Below are methods for the Classes
         public static async Task AddClass(int termId, string className, DateTime startDate, DateTime endDate,
                                             string courseStatus, string instructorName, string instructorPhone,
-                                            string instructorEmail, string notes)
+                                            string instructorEmail, string notes, bool startNotification)
         {
             await GetDatabase();
 
@@ -137,7 +137,8 @@ namespace C971.Services
                 InstructorName = instructorName,
                 InstructorPhone = instructorPhone,
                 InstructorEmail = instructorEmail,
-                Notes = notes
+                Notes = notes,
+                StartNotification = startNotification
             };
             await _db.InsertAsync(classes);
             var classId = classes.ClassId;
@@ -209,7 +210,7 @@ namespace C971.Services
         }
         public static async Task UpdateClass(int classId, string className, DateTime startDate, DateTime endDate,
                                             string courseStatus, string instructorName, string instructorPhone,
-                                            string instructorEmail, string notes)
+                                            string instructorEmail, string notes, bool startNotification)
         {
             await GetDatabase();
 
@@ -224,6 +225,7 @@ namespace C971.Services
                 classesQuery.InstructorEmail = instructorEmail;
                 classesQuery.InstructorName = instructorName;
                 classesQuery.Notes = notes;
+                classesQuery.StartNotification = startNotification;
 
                 await _db.UpdateAsync(classesQuery);
             }
@@ -232,14 +234,17 @@ namespace C971.Services
 
         #region Assessments methods
         //Below are methods for the Assessments
-        public static async Task AddAssessment(int classId, string assessmentName)
+        public static async Task AddAssessment(int classId, string assessmentName, DateTime startDate, DateTime endDate, string assessmentType)
         {
             await GetDatabase();
 
             var assessments = new Models.Assessments()
             {
                 ClassId = classId,
-                AssessmentName = assessmentName
+                AssessmentName = assessmentName,
+                StartDate = startDate,
+                EndDate = endDate,
+                AssessmentType = assessmentType
             };
             await _db.InsertAsync(assessments);
             var assessmentId = assessments.AssessmentId;
@@ -344,6 +349,12 @@ namespace C971.Services
         {
             int classCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Classes where TermId = ?", _selectedTermId);
             return classCount;
+        }
+
+        public static async Task<int> GetAssessmentsCountAsync(int _selectedClassId)
+        {
+            int assessmentCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Assessments where ClassId = ?", _selectedClassId);
+            return assessmentCount;
         }
         #endregion
     }

@@ -32,6 +32,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                     
                 <Grid.ColumnDefinitions>
@@ -71,7 +72,9 @@
                        VerticalTextAlignment="Center"></Entry>
                 <Label Grid.Row="7" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Notes</Label>
                 <Editor x:Name="NotesEditor" Grid.Row="7" Grid.Column="1" Placeholder="Enter Notes Here"></Editor>
-                </Grid>
+                <Label Grid.Row="8" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Notifications</Label>
+                <Switch x:Name="Notification" Grid.Row="8" Grid.Column="1" HorizontalOptions="End" IsToggled="True" VerticalOptions="Center"></Switch>
+            </Grid>
             </StackLayout>
         </ContentPage.Content>
         

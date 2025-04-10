@@ -99,7 +99,7 @@ public partial class TermList : ContentPage
 			await RefreshTermsCollectionView();
 		}
 		await RefreshTermsCollectionView();
-		//ShowClassesNotifications();
+		ShowClassesNotifications();
 	}
 	async void AddTerm_OnClicked(object? sender, EventArgs e)
 	{
@@ -139,4 +139,58 @@ public partial class TermList : ContentPage
 	{
 		TermsCollectionView.ItemsSource = await DatabaseService.GetTerm();
 	}
+
+	//Notifications
+	private async void ShowClassesNotifications()
+	{
+		if (await LocalNotificationCenter.Current.AreNotificationsEnabled()==false)
+		{
+			await LocalNotificationCenter.Current.RequestNotificationPermission();
+		}
+		var ClassesList = await DatabaseService.GetClass();
+		var notifyRandom = new Random();
+
+		foreach (Classes classRecord  in ClassesList)
+		{
+			if (classRecord.StartNotification == true)
+			{
+				if (classRecord.StartDate.Date == DateTime.Today)
+				{
+					var notifyId = notifyRandom.Next(1000);
+
+					var notification = new NotificationRequest
+					{
+						NotificationId = notifyId,
+						Title = "Class Notification",
+						Description = $"{classRecord.ClassName} begins today!",
+						ReturningData = $"ClassId={classRecord.ClassId}",
+						BadgeNumber = 1,
+						Schedule = new NotificationRequestSchedule()
+						{
+							NotifyTime = DateTime.Now.AddSeconds(5),
+						}
+					};
+					await LocalNotificationCenter.Current.Show(notification);
+				}
+			}
+			//added to check for end dates
+			if (classRecord.EndDate.Date == DateTime.Today)
+			{
+				var endNotification = new NotificationRequest
+				{
+					NotificationId = notifyRandom.Next(1000),
+					Title = "Class Notification",
+					Description = $"{classRecord.ClassName} ends today!",
+					ReturningData = $"ClassId={classRecord.ClassId}",
+					BadgeNumber = 1,
+					Schedule = new NotificationRequestSchedule()
+					{
+						NotifyTime = DateTime.Now.AddSeconds(5),
+					}
+				};
+				await LocalNotificationCenter.Current.Show(endNotification);
+            }
+		}
+	}
+
 }

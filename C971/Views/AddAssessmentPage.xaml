@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C971.Views.AddAssessmentPage"
+             Title="AddAssessmentPage">
+    <!--<VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="SaveAssessment" Text="Save" Clicked="SaveAssessment_OnClicked"></ToolbarItem>
+        <ToolbarItem x:Name="CancelAssessment" Text="Cancel" Clicked="CancelAssessment_OnClicked"></ToolbarItem>
+        <ToolbarItem x:Name="Home" Text="Home" Clicked="Home_OnClicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="5" BackgroundColor="White" ColumnSpacing="22" RowSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Assessment Name</Label>
+                <Entry x:Name="AssessmentName" Grid.Row="0" Grid.Column="1" Placeholder="Enter Assessment Name" Text="{Binding AssessmentName}"
+                 VerticalTextAlignment="Center"></Entry>
+                <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Start Date</Label>
+                <DatePicker x:Name="StartDatePicker" Grid.Row="1" Grid.Column="1"
+                 FontSize="Medium" ></DatePicker>
+                <Label Grid.Row="2" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">End Date</Label>
+                <DatePicker x:Name="EndDatePicker" Grid.Row="2" Grid.Column="1"
+                 FontSize="Medium" ></DatePicker>
+                <Label Grid.Row="3" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Assessment Type</Label>
+                <Picker x:Name="AssessmentTypePicker" Title="Select Assessment Type" Grid.Row="3" Grid.Column="1"
+            FontSize="Medium">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Performance Assessment</x:String>
+                            <x:String>Objective Assessment</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

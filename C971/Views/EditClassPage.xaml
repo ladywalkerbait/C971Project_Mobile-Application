@@ -15,12 +15,15 @@
         <ToolbarItem x:Name="CancelClass" Text="Cancel" Clicked="CancelClass_OnClicked"></ToolbarItem>
         <ToolbarItem x:Name="DeleteClass" Text="Delete" Clicked="DeleteClass_OnClicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
-    
-    <ContentPage.Content>
-        <StackLayout>
 
-            <Grid Padding="5" BackgroundColor="LightGray"  ColumnSpacing="22" RowSpacing="1">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout>
+        
+            <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -70,9 +73,74 @@
                 <Label Grid.Row="8" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Notes</Label>
                 <Editor x:Name="NotesEditor" Grid.Row="8" Grid.Column="1" Placeholder="Enter Notes Here" Text="{Binding Notes}"
                         VerticalTextAlignment="Center"></Editor>
+                <Label Grid.Row="9" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Share</Label>
+                <Button x:Name="ShareButton" Grid.Row="9" Grid.Column="1" Clicked="ShareButton_OnClicked" FontSize="Medium" Text="Share"
+                        VerticalOptions="Center"></Button>
+                <Label Grid.Row="10" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center">Notifications</Label>
+                <Switch x:Name="Notification" Grid.Row="10" Grid.Column="1" HorizontalOptions="End" IsToggled="True" VerticalOptions="Center"></Switch>
             </Grid>
-            
-        </StackLayout>
+
+            <!-- Button to add an Assessment -->
+            <Button x:Name="AddAssessment" Clicked="AddAssessment_OnClicked" Text="Add Assessment"></Button>
+
+            <Label FontSize="Large" Text="Assessment Count"></Label>
+            <Label x:Name="CountLabel" FontSize="Large" Text="0"></Label>
+
+            <Label x:Name="AssessmentList" FontAttributes="Bold" FontSize="Large" Text="List of Assessments:"></Label>
+
+            <!-- Display Assessments in a list -->
+            <CollectionView x:Name="AssessmentsCollectionView" EmptyView="No assessments to display." 
+                                SelectionChanged="AssessmentsCollectionView_OnSelectionChanged"
+                                SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"></LinearItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid Padding="5" BackgroundColor="LightGray" ColumnSpacing="22" RowSpacing="1">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" 
+                                 VerticalTextAlignment="Center">AssessmentName</Label>
+                                <Label Grid.Row="0" Grid.Column="1" FontSize="Medium" Text="{Binding AssessmentName}"
+                                 VerticalTextAlignment="Center"></Label>
+                                <Label Grid.Row="1" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" 
+                                 VerticalTextAlignment="Center">StartDate</Label>
+                                <Label Grid.Row="1" Grid.Column="1" FontSize="Medium" Text="{Binding StartDate, StringFormat='{0:M/dd/yyyy}'}"
+                                 VerticalTextAlignment="Center"></Label>
+                                <Label Grid.Row="2" Grid.Column="0" FontAttributes="Bold" FontSize="Medium" 
+                                 VerticalTextAlignment="Center">EndDate</Label>
+                                <Label Grid.Row="2" Grid.Column="1" FontSize="Medium" Text="{Binding EndDate, StringFormat='{0:M/dd/yyyy}'}"
+                                 VerticalTextAlignment="Center"></Label>
+                                <Label Grid.Row="3" Grid.Column="0" FontAttributes="Bold" FontSize="Medium"
+                                 VerticalTextAlignment="Center">AssessmentType</Label>
+                                <Label Grid.Row="3" Grid.Column="1" FontSize="Medium" Text="{Binding AssessmentType}"
+                                 VerticalTextAlignment="Center"></Label>
+
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+        </ScrollView>
+        <!--</StackLayout>-->
     </ContentPage.Content>
     
 </ContentPage>

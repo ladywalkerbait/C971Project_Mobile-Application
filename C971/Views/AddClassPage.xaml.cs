@@ -72,7 +72,7 @@ public partial class AddClassPage : ContentPage
 
 		await DatabaseService.AddClass(_selectedTermId, ClassName.Text, StartDatePicker.Date, EndDatePicker.Date, 
 			CourseStatusPicker.SelectedItem.ToString(), InstructorName.Text, InstructorPhone.Text, InstructorEmail.Text,
-			NotesEditor.Text);
+			NotesEditor.Text, Notification.IsToggled);
 		await Navigation.PopAsync();
 
 	}
