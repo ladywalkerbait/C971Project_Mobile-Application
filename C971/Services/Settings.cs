@@ -13,9 +13,9 @@ namespace C971.Services
             get => Preferences.Get(nameof(FirstRun), true);
             set => Preferences.Set(nameof(FirstRun), value);
         }
-        public static void ClearSettings()
-        {
-            Preferences.Clear();
-        }
+        //public static void ClearSettings()
+        //{
+        //    Preferences.Clear();
+        //}
     }
 }

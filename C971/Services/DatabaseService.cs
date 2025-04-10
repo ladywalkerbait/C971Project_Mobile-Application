@@ -14,12 +14,7 @@ namespace C971.Services
     {
 
         private static SQLiteAsyncConnection _db;
-        //private static object term1;
-
-        //private static string GetDatabase()
-        //{
-        //    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "TermData.db";
-        //}
+     
         static async Task GetDatabase() //took out public 4/3
         {
             if (_db != null) //Don't create database if it already exists
@@ -38,8 +33,6 @@ namespace C971.Services
             //adding for future work
             //await _db.CreateTableAsync<Models.User>();
 
-            // await AddInitialTerms(); //testing
-
         }
         #region Terms methods
         //Below are methods for the Terms
@@ -57,21 +50,21 @@ namespace C971.Services
 
             var termId = terms.TermId;
         }
-        //method to add intial terms
-        private static async Task AddInitialTerms()
-        {
-            await GetDatabase();
-            var existingTerms = await _db.Table<Terms>().ToListAsync();
-            if (existingTerms.Count == 0)
-            {
-                var term1 = new Terms { TermName = "Term 1", StartDate = DateTime.Now, EndDate = DateTime.Now.AddMonths(6) };
-                var term2 = new Terms { TermName = "Term 2", StartDate = DateTime.Now.AddMonths(1), EndDate = DateTime.Now.AddMonths(5) };
-                await _db.InsertAsync(term1);
-                await _db.InsertAsync(term2);
+        //method to practice add intial terms
+        //private static async Task AddInitialTerms()
+        //{
+        //    await GetDatabase();
+        //    var existingTerms = await _db.Table<Terms>().ToListAsync();
+        //    if (existingTerms.Count == 0)
+        //    {
+        //        var term1 = new Terms { TermName = "Term 1", StartDate = DateTime.Now, EndDate = DateTime.Now.AddMonths(6) };
+        //        var term2 = new Terms { TermName = "Term 2", StartDate = DateTime.Now.AddMonths(1), EndDate = DateTime.Now.AddMonths(5) };
+        //        await _db.InsertAsync(term1);
+        //        await _db.InsertAsync(term2);
 
-            }
+        //    }
 
-        }
+        //}
         public static async Task DeleteTerm(int termId)
         {
             await GetDatabase();
@@ -145,52 +138,42 @@ namespace C971.Services
 
         }
         //tesing below method
-        public static async Task AddInitialClasses(int termId)
-        {
-            await GetDatabase();
-            var existingTerms = await _db.Table<Terms>().ToListAsync();
-            var term1 = existingTerms.FirstOrDefault(t => t.TermName == "Term 1");
+        //public static async Task AddInitialClasses(int termId)
+        //{
+        //    await GetDatabase();
+        //    var existingTerms = await _db.Table<Terms>().ToListAsync();
+        //    var term1 = existingTerms.FirstOrDefault(t => t.TermName == "Term 1");
 
-            var term1Classes = await _db.Table<Classes>().Where(c => c.TermId == term1.TermId).ToListAsync();
+        //    var term1Classes = await _db.Table<Classes>().Where(c => c.TermId == term1.TermId).ToListAsync();
 
-            //await GetDatabase();
+        //    //await GetDatabase();
 
-            //var existingClasses = await _db.Table<Classes>().Where(c => c.TermId == termId).ToListAsync();
-            ////if no classes exist, add them
-            //if (existingClasses.Count == 0)
-            if (term1Classes.Count == 0)
-            {
+        //    //var existingClasses = await _db.Table<Classes>().Where(c => c.TermId == termId).ToListAsync();
+        //    ////if no classes exist, add them
+        //    //if (existingClasses.Count == 0)
+        //    if (term1Classes.Count == 0)
+        //    {
 
-                var class1 = new Classes
-                {
-                    TermId = termId,
-                    ClassName = "Course 1", //};
-                    StartDate = DateTime.Now,
-                    EndDate = DateTime.Now,
-                    CourseStatus = "In Progress",
-                    InstructorName = "John Doe",
-                    InstructorPhone = "555-5555",
-                    InstructorEmail = "johndoe@wgu.edu",
-                    Notes = "Notes for class go here."
-                };
+        //        var class1 = new Classes
+        //        {
+        //            TermId = termId,
+        //            ClassName = "Course 1", //};
+        //            StartDate = DateTime.Now,
+        //            EndDate = DateTime.Now,
+        //            CourseStatus = "In Progress",
+        //            InstructorName = "John Doe",
+        //            InstructorPhone = "555-5555",
+        //            InstructorEmail = "johndoe@wgu.edu",
+        //            Notes = "Notes for class go here."
+        //        };
 
-                await _db.InsertAsync(class1);
-            }
+        //        await _db.InsertAsync(class1);
+        //    }
 
-        }
+        //}
         public static async Task DeleteClass(int classId)
         {
             await GetDatabase();
-
-            //var classList = await _db.Table<Classes>().ToListAsync();
-            //foreach (var class in classList)
-            //{
-            //    if (class.ClassId == classId)
-            //    {
-            //        await _db.DeleteAsync(class);
-            //        break;
-            //    }
-            //}
 
             await _db.DeleteAsync<Classes>(classId);
         }
@@ -287,7 +270,7 @@ namespace C971.Services
         #endregion
 
         #region DemoData
-        public static async Task LoadSampleData() //Changed "void" to "Task"
+        public static async Task LoadSampleData() 
         {
             //Add Term with Classes
             await GetDatabase();
@@ -299,53 +282,65 @@ namespace C971.Services
             };
             await _db.InsertAsync(term);
 
-            //Classes class1 = new Classes
-            //{
-            //    ClassName = "Course 1",
-            //    StartDate = DateTime.Today.Date,
-            //    EndDate = DateTime.Now.AddMonths(2),
-            //    CourseStatus = "In-Progress",
-            //    InstructorName = "Anika Patel",
-            //    InstructorPhone = "555-123-4567",
-            //    InstructorEmail = "anika.patel@strimeuniversity.edu",
-            //    TermId = term.TermId
-            //};
-            //await _db.InsertAsync(class1);
-
-            //Classes class2 = new Classes
-            //{
-            //    ClassName = "Course 2"
-            //};
-
-            //Add another Term with Classes
-            Terms term2 = new Terms
+            Classes class1 = new Classes
             {
-                TermName = "Term 2",
-                StartDate = DateTime.Now.AddMonths(6),
-                EndDate = DateTime.Now.AddMonths(10)
+                ClassName = "Course 1",
+                StartDate = DateTime.Today.Date,
+                EndDate = DateTime.Now.AddMonths(2),
+                CourseStatus = "In-Progress",
+                InstructorName = "Anika Patel",
+                InstructorPhone = "555-123-4567",
+                InstructorEmail = "anika.patel@strimeuniversity.edu",
+                Notes = "Welcome to Course 1!",
+                StartNotification = true,
+                
+                TermId = term.TermId
             };
-            await _db.InsertAsync(term2);
+            await _db.InsertAsync(class1);
 
-            //Classes class1 = new Classes
+            Assessments assessment1 = new Assessments
+            {
+                AssessmentName = "C971",
+                StartDate = DateTime.Today.Date,
+                EndDate = DateTime.Now.AddMonths(2),
+                AssessmentType = "Performance Assessment",
+                StartNotification = true,
+
+                ClassId = class1.ClassId
+            };
+            await _db.InsertAsync(assessment1);
+            Assessments assessment2 = new Assessments
+            {
+                AssessmentName = "LAP2",
+                StartDate = DateTime.Now.AddMonths(1),
+                EndDate = DateTime.Now.AddMonths(2),
+                AssessmentType = "Objective Assessment",
+                StartNotification = true,
+
+                ClassId = class1.ClassId
+            };
+            await _db.InsertAsync(assessment2);
+
+            //Terms term2 = new Terms
             //{
-            //    //Class info goes here
-            //    TermId = term2.TermId
+            //    TermName = "Term 2",
+            //    StartDate = DateTime.Now.AddMonths(6),
+            //    EndDate = DateTime.Now.AddMonths(10)
             //};
-        }
-        public static async Task ClearSampleData() //Changed "void" to "Task"
-        {
-            await GetDatabase();
-            await _db.DropTableAsync<Terms>();
-            await _db.DropTableAsync<Classes>();
-            await _db.DropTableAsync<Assessments>();
-            _db = null;
-
-            Settings.ClearSettings();
-        }
-        public static async void LoadSampleDataSql()
-        {
+            //await _db.InsertAsync(term2);
 
         }
+        //public static async Task ClearSampleData() 
+        //{
+        //    await GetDatabase();
+        //    await _db.DropTableAsync<Terms>();
+        //    await _db.DropTableAsync<Classes>();
+        //    await _db.DropTableAsync<Assessments>();
+        //    _db = null;
+
+        //    Settings.ClearSettings();
+        //}
+
         #endregion
 
         #region Counts

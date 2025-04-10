@@ -14,12 +14,12 @@ namespace C971.Views;
 
 public partial class TermList : ContentPage
 {
-	//private ObservableCollection<Terms> _terms; //added to try to make it dynamic 3/31
+	//private ObservableCollection<Terms> _terms; 
 	public TermList()
 	{
 		InitializeComponent();
-		//_terms = new ObservableCollection<Terms>(); //added to try to make it dynamic 3/31
-		//BindingContext = this; //added to try to make it dynamic 3/31
+		//_terms = new ObservableCollection<Terms>(); 
+		//BindingContext = this; 
 	}
 
 	//private async void OnAddTermClicked(object sender, EventArgs e)
@@ -106,26 +106,20 @@ public partial class TermList : ContentPage
 	{
 		await Navigation.PushAsync(new AddTermPage());
 	}
-	private async void ClearDatabase_OnClicked(object sender, EventArgs e) //Delete before submitting project
-	{
-		await DatabaseService.ClearSampleData();
-		await RefreshTermsCollectionView();
-	}
 
-	////Not sure if I need this method below?
-	//private async void LoadDatabase_OnClicked(object? sender, EventArgs e) 
+	//private async void ClearDatabase_OnClicked(object sender, EventArgs e) //Delete before submitting project
 	//{
-	//	await DatabaseService.LoadSampleData();
+	//	await DatabaseService.ClearSampleData();
 	//	await RefreshTermsCollectionView();
 	//}
-	private async void LoadSampleData_OnClicked(object sender, EventArgs e) //Delete before submitting project
-	{
-		if (Settings.FirstRun)
-		{
-			await DatabaseService.LoadSampleData();
-			await RefreshTermsCollectionView();
-		}
-	}
+	//private async void LoadSampleData_OnClicked(object sender, EventArgs e) //Delete before submitting project
+	//{
+	//	if (Settings.FirstRun)
+	//	{
+	//		await DatabaseService.LoadSampleData();
+	//		await RefreshTermsCollectionView();
+	//	}
+	//}
 	private async void TermsCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
 	{
 		if (e.CurrentSelection != null)

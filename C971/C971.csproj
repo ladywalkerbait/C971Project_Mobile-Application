@@ -86,9 +86,6 @@
 	  <MauiXaml Update="Views\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\TermDetailedView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Views\TermList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
